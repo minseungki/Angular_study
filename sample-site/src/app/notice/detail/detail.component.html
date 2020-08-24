@@ -1,1 +1,19 @@
-<p>detail works!</p>
+<div>
+  <table>
+    <tr>
+      <td>제목</td>
+      <td>{{ detail.title }}</td>
+    </tr>
+    <tr>
+      <td>내용</td>
+      <td>{{ detail.content }}</td>
+    </tr>
+    <tr>
+      <td>등록일</td>
+      <td>{{ detail.regDate }}</td>
+    </tr>
+  </table>
+</div>
+<div class="btn-area">
+  <button [routerLink]="'/notice'">목록으로</button>
+</div>

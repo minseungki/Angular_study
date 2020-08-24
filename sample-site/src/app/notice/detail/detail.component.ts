@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Notice } from "../../share/notice/notice.interface";
+import { NoticeService } from "../../share/notice/notice.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  detail: Notice;
+  id: number;
+
+  constructor(
+    private noticeService: NoticeService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.id = Number(params.get('id'))
+    });
+    this.detail = this.noticeService.getData(this.id)
   }
 
 }

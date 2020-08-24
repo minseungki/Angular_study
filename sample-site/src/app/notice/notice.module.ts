@@ -1,14 +1,23 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { EditComponent } from './edit/edit/edit.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [ListComponent, DetailComponent],
+  declarations: [
+    ListComponent,
+    DetailComponent,
+    EditComponent
+  ],
   imports: [
+    AgGridModule.withComponents([]),
     CommonModule,
-    AgGridModule.withComponents([])
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class NoticeModule { }

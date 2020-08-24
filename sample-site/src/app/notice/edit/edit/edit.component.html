@@ -1,0 +1,24 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="title">
+      제목
+    </label>
+    <input id="title" type="text" formControlName="title" [(ngModel)]="detail.title">
+  </div>
+
+  <div>
+    <label for="content">
+      내용
+    </label>
+    <input id="content" type="text" formControlName="content" [(ngModel)]="detail.content">
+  </div>
+
+  <div class="btn-area">
+    <button class="button" type="submit" *ngIf="id === 0">등록</button>
+    <button class="button" type="submit" *ngIf="id !== 0">수정</button>
+    <button (click)="onReset()">초기화</button>
+    <button (click)="onHistoryBack()">취소</button>
+  </div>
+
+</form>

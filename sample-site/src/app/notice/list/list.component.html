@@ -1,16 +1,18 @@
-<p>list works!</p>
-
 <table>
   <thead>
-    <tr *ngFor="let columnItem of columnDefs">
-      <th> {{columnItem.headerName}} </th>
-    </tr>
+  <tr>
+    <th *ngFor="let columnItem of columnDefs"> {{columnItem.headerName}} </th>
+  </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let dataItem of rowData">
-      <td> {{dataItem.make}} </td>
-      <td> {{dataItem.model}} </td>
-      <td> {{dataItem.price}} </td>
-    </tr>
+  <tr *ngFor="let dataItem of rowData">
+    <td> {{dataItem.id}} </td>
+    <td [routerLink]="['/notice/' + dataItem.id + '/detail']"> {{dataItem.title}} </td>
+    <td> {{dataItem.regDate}} </td>
+  </tr>
   </tbody>
 </table>
+
+<div class="btn-area">
+  <button [routerLink]="['/notice/0/edit']">등록</button>
+</div>

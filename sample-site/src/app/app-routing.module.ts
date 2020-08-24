@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {IndexComponent} from "./index/index.component";
-import {ListComponent} from "./notice/list/list.component";
-import {DetailComponent} from "./notice/detail/detail.component";
+import { IndexComponent } from "./index/index.component";
+import { ListComponent } from "./notice/list/list.component";
+import { DetailComponent } from "./notice/detail/detail.component";
+import { EditComponent } from "./notice/edit/edit/edit.component";
 
 const routes: Routes = [
 
@@ -20,8 +21,12 @@ const routes: Routes = [
     component: ListComponent
   },
   {
-    path: 'notice/:id',
+    path: 'notice/:id/detail',
     component: DetailComponent
+  },
+  {
+    path: 'notice/:id/edit',
+    component: EditComponent
   }
 
 ];
