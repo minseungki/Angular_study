@@ -1,6 +1,6 @@
 # 이 프로젝트는 Angular study 프로젝트 입니다.
 
-## 모듈 구조
+## 모듈 구조 tt
 ```
 @NgModule({
   /*
